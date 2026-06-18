@@ -111,8 +111,7 @@
   .mini{font-size:11px;color:#8a94a6;font-weight:500;margin-left:6px}
 
   /* fixtures */
-  .fx .side .teaminfo{display:flex;flex-direction:column;min-width:0}
-  .fx .side.away .teaminfo{align-items:flex-end}
+  .fx .side .teaminfo{display:flex;flex-direction:column;min-width:0;flex:1}
   .fx .own{font-size:10px;color:#8a94a6;font-weight:600;line-height:1.15;margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .kohint{font-size:12.5px;color:#5d6b80;margin:0 0 12px}
   .modebar{font-size:12.5px;border-radius:10px;padding:9px 13px;margin:16px 0 0}
@@ -152,7 +151,6 @@
   .fx{display:flex;align-items:center;gap:8px;padding:9px 14px;border-bottom:1px solid var(--line);font-size:13px}
   .fx:last-child{border-bottom:none}
   .fx .side{display:flex;align-items:center;gap:7px;flex:1;min-width:0}
-  .fx .side.away{flex-direction:row-reverse;text-align:right}
   .fx .side .nm{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:600}
   .fx .sc{display:flex;align-items:center;gap:4px;flex:0 0 auto}
   .fx .sc input{width:32px;height:30px;text-align:center;border:1px solid #d3dced;border-radius:8px;
@@ -460,7 +458,7 @@ function buildFixtures(){
     for(let i=0;i<teams.length;i++)for(let j=i+1;j<teams.length;j++){
       const A=teams[i],B=teams[j], pk=pairKey(A.name,B.name);
       h+=`<div class="fx" data-idx="${idx++}" data-pk="${pk}" data-a="${encodeURIComponent(A.name)}" data-b="${encodeURIComponent(B.name)}">`+
-         `<div class="side home">${flagImg(A.code,true)}<span class="teaminfo"><span class="nm">${A.name}</span><span class="own">${own(A.name)}</span></span></div>`+
+         `<div class="side home"><span class="teaminfo"><span class="nm">${A.name}</span><span class="own">${own(A.name)}</span></span>${flagImg(A.code,true)}</div>`+
          `<div class="sc"><input type="number" min="0" class="sa" inputmode="numeric" ${ro}><span class="dash">–</span><input type="number" min="0" class="sb" inputmode="numeric" ${ro}></div>`+
          `<div class="side away"><span class="teaminfo"><span class="nm">${B.name}</span><span class="own">${own(B.name)}</span></span>${flagImg(B.code,true)}</div></div>`;
     }
