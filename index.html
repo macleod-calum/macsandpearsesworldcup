@@ -115,7 +115,7 @@
   .fx .side.away .teaminfo{align-items:flex-end}
   .fx .own{font-size:10px;color:#8a94a6;font-weight:600;line-height:1.15;margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .kohint{font-size:12.5px;color:#5d6b80;margin:0 0 12px}
-  .modebar{font-size:12.5px;border-radius:10px;padding:9px 13px;margin:0 0 12px}
+  .modebar{font-size:12.5px;border-radius:10px;padding:9px 13px;margin:16px 0 0}
   .modebar.view{background:#eef2f8;color:#42506a}
   .modebar.edit{background:#fff7e6;color:#7a5a12;border:1px solid #eddcae}
   .fx .sc input:disabled{background:#fff;color:#1a2230;-webkit-text-fill-color:#1a2230;opacity:1;border-color:#e6ebf3;cursor:default}
@@ -180,9 +180,9 @@
   .gtbl .tn .cn{font-weight:700;color:var(--navy);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .gtbl .tn .mo{font-size:10px;color:#8a94a6;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .gtbl .gpos{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;
-    font-size:11px;font-weight:800;color:#fff;background:#9aa6b8}
-  .gtbl tr.q1 .gpos{background:linear-gradient(160deg,#f3d169,#d8a93a)}
-  .gtbl tr.q2 .gpos{background:linear-gradient(160deg,#cfd6e0,#9aa6b8)}
+    font-size:11px;font-weight:800;color:#fff;background:#5d6b80}
+  .gtbl tr.q1 .gpos{background:linear-gradient(160deg,#f3d169,#d8a93a);color:#3a2e07}
+  .gtbl tr.q2 .gpos{background:linear-gradient(160deg,#dfe6ee,#aeb8c6);color:#33404f}
   .gtbl tr.q1 td,.gtbl tr.q2 td{background:#fcfaf2}
 
   footer{margin-top:24px;font-size:11.5px;color:#8a94a6;line-height:1.6}
@@ -271,7 +271,6 @@
   <!-- ============ GROUP TABLES PAGE ============ -->
   <section id="page-groups" class="page">
     <h2><span class="bar"></span>World Cup Group Tables</h2>
-    <p class="kohint">The real group standings, computed live from the scores on the Fixtures tab. The holding manager is shown in brackets under each nation. Sorted by Points, then Goal Difference, then Goals For. The top two of each group are highlighted (gold &amp; silver) once games have been played.</p>
     <div class="groups" id="grouptables"></div>
     <footer>
       These are the football group standings, not the sweepstake league — for that, see <b>Squads &amp; Standings</b>. Best-placed third teams advance too, but that depends on results across all groups, so no third-place highlight is shown here.
@@ -281,14 +280,14 @@
   <!-- ============ FIXTURES PAGE ============ -->
   <section id="page-fixtures" class="page">
     <h2><span class="bar"></span>Group Stage Fixtures <span class="mini" id="upd2">&mdash;</span></h2>
-    <div class="modebar" id="modebar"></div>
-    <div class="ltbar">
+    <div class="ltbar" id="fxtools">
       <button class="btn" id="commit">✓ Finished editing</button>
       <button class="btn ghost" id="export">⬇ Export results.json</button>
       <button class="btn ghost" id="resetfx">Clear my edits</button>
       <span class="status" id="status2">Type scores below, then press &ldquo;Finished editing&rdquo; to confirm.</span>
     </div>
     <div class="groups" id="groups"></div>
+    <div class="modebar" id="modebar"></div>
 
     <h2 style="margin-top:30px"><span class="bar"></span>Knockout Stage</h2>
     <p class="kohint">Bracket slots — teams drop in once the group stage finishes. Round of 32 pairings follow the official bracket; later rounds carry the winners through (Winner R32·1 vs Winner R32·2, and so on). The two losing semi-finalists meet in the 3rd-place play-off, shown beneath the Final.</p>
@@ -351,6 +350,7 @@ function exportResults(){
 }
 function applyMode(){
   ['commit','export','resetfx'].forEach(id=>{const el=document.getElementById(id); if(el) el.style.display=EDIT?'':'none';});
+  const tools=document.getElementById('fxtools'); if(tools) tools.style.display=EDIT?'':'none';
   const b=document.getElementById('modebar');
   if(b){ b.className='modebar '+(EDIT?'edit':'view');
     b.innerHTML=EDIT
