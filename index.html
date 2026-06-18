@@ -470,6 +470,7 @@ function load(){
 }
 
 document.getElementById("resetfx").onclick=()=>{ MANUAL={}; STAGE={}; saveManual(); saveStage(); fillFixtures(); renderLeague(); document.getElementById("status2").textContent="All scores cleared."; };
+document.getElementById("export").onclick=exportResults;
 document.getElementById("commit").onclick=()=>{
   const keys=Object.keys(STAGE);
   if(!keys.length){ document.getElementById("status2").textContent="No pending edits to confirm."; return; }
