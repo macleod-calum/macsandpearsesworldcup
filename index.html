@@ -122,12 +122,27 @@
   .clist{display:flex;flex-direction:column;gap:5px}
   .clist .ci{display:flex;gap:8px;align-items:center;font-size:12.5px;color:#42506a}
   .clist .cg{flex:0 0 auto;font-weight:800;color:#13284b;background:#eef2f8;border-radius:6px;padding:1px 7px;font-size:11px}
-  .grp.ko .kolist{padding:2px 0}
-  .km{display:flex;align-items:center;gap:8px;padding:8px 14px;border-bottom:1px solid var(--line);font-size:12.5px}
-  .km:last-child{border-bottom:none}
-  .kn{flex:0 0 auto;display:inline-grid;place-items:center;min-width:22px;height:20px;padding:0 5px;border-radius:6px;background:#eef2f8;color:#5d6b80;font-weight:800;font-size:11px}
-  .ph{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background:#f6f8fb;border:1px dashed #cdd8ea;border-radius:8px;padding:5px 9px;color:#5d6b80;font-weight:600;font-style:italic}
-  .kvs{flex:0 0 auto;color:#9aa6b8;font-weight:700;font-size:11px}
+  /* knockout bracket */
+  .kobracket{display:flex;gap:14px;align-items:flex-start;overflow-x:auto;padding:2px 2px 12px;-webkit-overflow-scrolling:touch}
+  .koround{flex:0 0 auto;width:174px;display:flex;flex-direction:column;gap:8px}
+  .kohd{display:flex;align-items:center;gap:7px;padding:9px 11px;border-radius:12px;font-size:12px;font-weight:700;
+    color:#fff;letter-spacing:.4px;background:linear-gradient(180deg,var(--navy2),var(--navy))}
+  .kohd .lt{display:inline-grid;place-items:center;width:21px;height:21px;border-radius:6px;
+    background:var(--gold);color:#2a2410;font-weight:800;font-size:11px}
+  .kcell{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:11px;
+    padding:7px 9px;box-shadow:0 4px 12px rgba(13,31,60,.06)}
+  .kcell.fin{border-color:var(--gold);box-shadow:0 6px 16px rgba(216,169,58,.22)}
+  .kcn{flex:0 0 auto;display:inline-grid;place-items:center;width:18px;height:18px;border-radius:6px;
+    background:#eef2f8;color:#5d6b80;font-weight:800;font-size:10px}
+  .kcell.fin .kcn{background:var(--gold);color:#2a2410}
+  .kteams{flex:1;min-width:0;display:flex;flex-direction:column;gap:5px}
+  .kt{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:12px;font-weight:600;font-style:italic;
+    color:#5d6b80;background:#f6f8fb;border:1px dashed #cdd8ea;border-radius:7px;padding:4px 8px}
+  .kcap{margin-top:6px;font-size:10.5px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;color:#8a94a6;padding-left:2px}
+  @media(max-width:700px){
+    .kobracket{flex-direction:column;overflow-x:visible}
+    .koround{width:auto}
+  }
   .groups{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:16px}
   .grp{background:#fff;border-radius:16px;box-shadow:0 10px 26px rgba(13,31,60,.09);overflow:hidden}
   .grp h3{margin:0;padding:12px 16px;font-size:14px;color:#fff;letter-spacing:.5px;
@@ -276,10 +291,10 @@
     <div class="groups" id="groups"></div>
 
     <h2 style="margin-top:30px"><span class="bar"></span>Knockout Stage</h2>
-    <p class="kohint">Bracket slots — teams drop in once the group stage finishes. Round of 32 pairings follow the official bracket; later rounds carry the winners through (Winner R32·1 vs Winner R32·2, and so on).</p>
-    <div class="groups" id="knockout"></div>
+    <p class="kohint">Bracket slots — teams drop in once the group stage finishes. Round of 32 pairings follow the official bracket; later rounds carry the winners through (Winner R32·1 vs Winner R32·2, and so on). The two losing semi-finalists meet in the 3rd-place play-off, shown beneath the Final.</p>
+    <div id="knockout"></div>
     <footer>
-      All 72 group-stage matches are listed. Played scores fill in from the feed; type into any box to add or override a result (saved in this browser). The league table is built from these 72 group-stage fixtures, so it can never show more games than a manager's nations have actually played.
+      All 72 group-stage matches are listed. Type into any box to add or override a result (saved in this browser, in edit mode). The league table is built from these 72 group-stage fixtures, so it can never show more games than a manager's nations have actually played.
     </footer>
   </section>
 
@@ -484,14 +499,24 @@ function buildKnockout(){
     {lt:"16",title:"Round of 16",pairs:fromPrev("R32",8)},
     {lt:"QF",title:"Quarter-finals",pairs:fromPrev("R16",4)},
     {lt:"SF",title:"Semi-finals",pairs:fromPrev("QF",2)},
-    {lt:"F",title:"Final",pairs:fromPrev("SF",1)},
   ];
+  const cell=(n,p,extra)=>`<div class="kcell ${extra||''}"><span class="kcn">${n}</span>`+
+    `<div class="kteams"><span class="kt">${p[0]}</span><span class="kt">${p[1]}</span></div></div>`;
+
+  const bracket=document.createElement("div"); bracket.className="kobracket";
   for(const r of rounds){
-    let h=`<h3><span class="lt">${r.lt}</span> ${r.title}</h3><div class="kolist">`;
-    r.pairs.forEach((p,i)=>{ h+=`<div class="km"><span class="kn">${i+1}</span><span class="ph">${p[0]}</span><span class="kvs">v</span><span class="ph">${p[1]}</span></div>`; });
-    h+=`</div>`;
-    const c=document.createElement("div"); c.className="grp ko"; c.innerHTML=h; wrap.appendChild(c);
+    let h=`<div class="kohd"><span class="lt">${r.lt}</span>${r.title}</div>`;
+    r.pairs.forEach((p,i)=>{ h+=cell(i+1,p); });
+    const col=document.createElement("div"); col.className="koround"; col.innerHTML=h; bracket.appendChild(col);
   }
+  // Final column: the Final + the 3rd-place play-off (losing semi-finalists)
+  let fh=`<div class="kohd"><span class="lt">F</span>Final</div>`;
+  fh+=cell(1,["Winner SF·1","Winner SF·2"],"fin");
+  fh+=`<div class="kcap">3rd place play-off</div>`;
+  fh+=cell(1,["Loser SF·1","Loser SF·2"]);
+  const fcol=document.createElement("div"); fcol.className="koround"; fcol.innerHTML=fh; bracket.appendChild(fcol);
+
+  wrap.appendChild(bracket);
 }
 function fillFixtures(){
   const M=merged();
