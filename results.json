@@ -166,5 +166,33 @@
     "hs": 1,
     "as": 0,
     "ts": 1781770479922
+  },
+  "czechia|southafrica": {
+    "h": "South Africa",
+    "a": "Czechia",
+    "hs": 1,
+    "as": 1,
+    "ts": 1781857619244
+  },
+  "bosniaandherzegovina|switzerland": {
+    "h": "Bosnia and Herzegovina",
+    "a": "Switzerland",
+    "hs": 1,
+    "as": 4,
+    "ts": 1781857619244
+  },
+  "canada|qatar": {
+    "h": "Canada",
+    "a": "Qatar",
+    "hs": 6,
+    "as": 0,
+    "ts": 1781857619244
+  },
+  "mexico|southkorea": {
+    "h": "Mexico",
+    "a": "South Korea",
+    "hs": 1,
+    "as": 0,
+    "ts": 1781857619244
   }
 }
