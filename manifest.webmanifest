@@ -1,0 +1,14 @@
+{
+  "name": "Macs & Pearses 2026 World Cup League of Champions",
+  "short_name": "Macs & Pearses",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0d1f3c",
+  "theme_color": "#0d1f3c",
+  "icons": [
+    { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "apple-touch-icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "apple-touch-icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
