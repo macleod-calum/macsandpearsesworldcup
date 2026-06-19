@@ -235,7 +235,7 @@
     <button id="nav-league" class="active" onclick="showPage('league')"><span class="ic">🏆</span>Squads &amp; Standings</button>
     <button id="nav-groups" onclick="showPage('groups')"><span class="ic">📊</span>Group Tables</button>
     <button id="nav-fixtures" onclick="showPage('fixtures')"><span class="ic">📅</span>Fixtures &amp; Results</button>
-    <button id="nav-daily" onclick="showPage('daily')"><span class="ic">📆</span>Today</button>
+    <button id="nav-daily" onclick="showPage('daily')"><span class="ic">📆</span>Today's Games</button>
   </nav>
 </div>
 
@@ -485,7 +485,7 @@ function renderGroupTables(){
       const gdcls = r.GD>0?'pos':(r.GD<0?'neg':''), gd=(r.GD>0?'+':'')+r.GD;
       const mgr = DATA.holder[r.name]||'—';
       h+=`<tr class="${cls}"><td><span class="gpos">${i+1}</span></td>`+
-        `<td class="l"><div class="team-cell">${flagImg(r.code,true)}<span class="tn"><span class="cn">${r.name}</span><span class="mo">(${mgr})</span></span></div></td>`+
+        `<td class="l"><div class="team-cell">${flagImg(r.code,true)}<span class="tn"><span class="cn">${disp(r.name)}</span><span class="mo">(${mgr})</span></span></div></td>`+
         `<td>${r.P}</td><td>${r.W}</td><td>${r.D}</td><td>${r.L}</td>`+
         `<td>${r.GF}</td><td>${r.GA}</td><td class="gd ${gdcls}">${gd}</td><td class="pts">${r.PTS}</td></tr>`;
     });
