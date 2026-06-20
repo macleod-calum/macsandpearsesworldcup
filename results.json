@@ -194,5 +194,33 @@
     "hs": 1,
     "as": 0,
     "ts": 1781857619244
+  },
+  "morocco|scotland": {
+    "h": "Scotland",
+    "a": "Morocco",
+    "hs": 0,
+    "as": 1,
+    "ts": 1781970560992
+  },
+  "brazil|haiti": {
+    "h": "Brazil",
+    "a": "Haiti",
+    "hs": 3,
+    "as": 0,
+    "ts": 1781970560992
+  },
+  "paraguay|turkiye": {
+    "h": "Türkiye",
+    "a": "Paraguay",
+    "hs": 0,
+    "as": 1,
+    "ts": 1781970560992
+  },
+  "australia|usa": {
+    "h": "USA",
+    "a": "Australia",
+    "hs": 2,
+    "as": 0,
+    "ts": 1781970560992
   }
 }
