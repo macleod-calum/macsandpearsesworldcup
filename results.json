@@ -222,5 +222,33 @@
     "hs": 2,
     "as": 0,
     "ts": 1781970560992
+  },
+  "cotedivoire|germany": {
+    "h": "Germany",
+    "a": "Côte d'Ivoire",
+    "hs": 2,
+    "as": 1,
+    "ts": 1782028374240
+  },
+  "curacao|ecuador": {
+    "h": "Ecuador",
+    "a": "Curaçao",
+    "hs": 0,
+    "as": 0,
+    "ts": 1782028374240
+  },
+  "netherlands|sweden": {
+    "h": "Sweden",
+    "a": "Netherlands",
+    "hs": 1,
+    "as": 5,
+    "ts": 1782028374241
+  },
+  "japan|tunisia": {
+    "h": "Japan",
+    "a": "Tunisia",
+    "hs": 4,
+    "as": 0,
+    "ts": 1782028374241
   }
 }
