@@ -250,5 +250,33 @@
     "hs": 4,
     "as": 0,
     "ts": 1782028374241
+  },
+  "belgium|iran": {
+    "h": "Iran",
+    "a": "Belgium",
+    "hs": 0,
+    "as": 0,
+    "ts": 1782115013664
+  },
+  "egypt|newzealand": {
+    "h": "New Zealand",
+    "a": "Egypt",
+    "hs": 1,
+    "as": 3,
+    "ts": 1782115013664
+  },
+  "saudiarabia|spain": {
+    "h": "Saudi Arabia",
+    "a": "Spain",
+    "hs": 0,
+    "as": 4,
+    "ts": 1782115013664
+  },
+  "capeverde|uruguay": {
+    "h": "Uruguay",
+    "a": "Cape Verde",
+    "hs": 2,
+    "as": 2,
+    "ts": 1782115013664
   }
 }
