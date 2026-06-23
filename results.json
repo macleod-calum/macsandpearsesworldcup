@@ -278,5 +278,33 @@
     "hs": 2,
     "as": 2,
     "ts": 1782115013664
+  },
+  "norway|senegal": {
+    "h": "Senegal",
+    "a": "Norway",
+    "hs": 2,
+    "as": 3,
+    "ts": 1782203368591
+  },
+  "france|iraq": {
+    "h": "France",
+    "a": "Iraq",
+    "hs": 3,
+    "as": 0,
+    "ts": 1782203368591
+  },
+  "argentina|austria": {
+    "h": "Argentina",
+    "a": "Austria",
+    "hs": 2,
+    "as": 0,
+    "ts": 1782203368591
+  },
+  "algeria|jordan": {
+    "h": "Algeria",
+    "a": "Jordan",
+    "hs": 2,
+    "as": 1,
+    "ts": 1782203368591
   }
 }
