@@ -306,5 +306,33 @@
     "hs": 2,
     "as": 1,
     "ts": 1782203368591
+  },
+  "colombia|drcongo": {
+    "h": "Colombia",
+    "a": "DR Congo",
+    "hs": 1,
+    "as": 0,
+    "ts": 1782290671178
+  },
+  "portugal|uzbekistan": {
+    "h": "Portugal",
+    "a": "Uzbekistan",
+    "hs": 5,
+    "as": 0,
+    "ts": 1782290671178
+  },
+  "england|ghana": {
+    "h": "England",
+    "a": "Ghana",
+    "hs": 0,
+    "as": 0,
+    "ts": 1782290671178
+  },
+  "croatia|panama": {
+    "h": "Croatia",
+    "a": "Panama",
+    "hs": 1,
+    "as": 0,
+    "ts": 1782290671178
   }
 }
