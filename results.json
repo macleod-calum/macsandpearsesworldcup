@@ -334,5 +334,173 @@
     "hs": 1,
     "as": 0,
     "ts": 1782290671178
+  },
+  "bosniaandherzegovina|qatar": {
+    "h": "Bosnia and Herzegovina",
+    "a": "Qatar",
+    "hs": 3,
+    "as": 1,
+    "ts": 1782666997550
+  },
+  "canada|switzerland": {
+    "h": "Canada",
+    "a": "Switzerland",
+    "hs": 1,
+    "as": 2,
+    "ts": 1782666997550
+  },
+  "haiti|morocco": {
+    "h": "Morocco",
+    "a": "Haiti",
+    "hs": 4,
+    "as": 2,
+    "ts": 1782666997550
+  },
+  "brazil|scotland": {
+    "h": "Scotland",
+    "a": "Brazil",
+    "hs": 0,
+    "as": 3,
+    "ts": 1782666997550
+  },
+  "czechia|mexico": {
+    "h": "Mexico",
+    "a": "Czechia",
+    "hs": 3,
+    "as": 0,
+    "ts": 1782666997550
+  },
+  "southafrica|southkorea": {
+    "h": "South Korea",
+    "a": "South Africa",
+    "hs": 0,
+    "as": 1,
+    "ts": 1782666997550
+  },
+  "cotedivoire|curacao": {
+    "h": "Côte d'Ivoire",
+    "a": "Curaçao",
+    "hs": 2,
+    "as": 0,
+    "ts": 1782666997550
+  },
+  "ecuador|germany": {
+    "h": "Germany",
+    "a": "Ecuador",
+    "hs": 1,
+    "as": 2,
+    "ts": 1782666997550
+  },
+  "australia|paraguay": {
+    "h": "Australia",
+    "a": "Paraguay",
+    "hs": 0,
+    "as": 0,
+    "ts": 1782666997550
+  },
+  "turkiye|usa": {
+    "h": "USA",
+    "a": "Türkiye",
+    "hs": 2,
+    "as": 3,
+    "ts": 1782666997550
+  },
+  "japan|sweden": {
+    "h": "Sweden",
+    "a": "Japan",
+    "hs": 1,
+    "as": 1,
+    "ts": 1782666997550
+  },
+  "netherlands|tunisia": {
+    "h": "Netherlands",
+    "a": "Tunisia",
+    "hs": 1,
+    "as": 3,
+    "ts": 1782666997550
+  },
+  "france|norway": {
+    "h": "France",
+    "a": "Norway",
+    "hs": 4,
+    "as": 1,
+    "ts": 1782666997550
+  },
+  "iraq|senegal": {
+    "h": "Senegal",
+    "a": "Iraq",
+    "hs": 5,
+    "as": 0,
+    "ts": 1782666997550
+  },
+  "egypt|iran": {
+    "h": "Iran",
+    "a": "Egypt",
+    "hs": 1,
+    "as": 1,
+    "ts": 1782666997550
+  },
+  "belgium|newzealand": {
+    "h": "New Zealand",
+    "a": "Belgium",
+    "hs": 1,
+    "as": 5,
+    "ts": 1782666997550
+  },
+  "capeverde|saudiarabia": {
+    "h": "Saudi Arabia",
+    "a": "Cape Verde",
+    "hs": 0,
+    "as": 0,
+    "ts": 1782666997550
+  },
+  "spain|uruguay": {
+    "h": "Uruguay",
+    "a": "Spain",
+    "hs": 0,
+    "as": 1,
+    "ts": 1782666997550
+  },
+  "england|panama": {
+    "h": "England",
+    "a": "Panama",
+    "hs": 2,
+    "as": 0,
+    "ts": 1782666997550
+  },
+  "croatia|ghana": {
+    "h": "Croatia",
+    "a": "Ghana",
+    "hs": 2,
+    "as": 1,
+    "ts": 1782666997550
+  },
+  "colombia|portugal": {
+    "h": "Portugal",
+    "a": "Colombia",
+    "hs": 0,
+    "as": 0,
+    "ts": 1782666997550
+  },
+  "drcongo|uzbekistan": {
+    "h": "Uzbekistan",
+    "a": "DR Congo",
+    "hs": 1,
+    "as": 3,
+    "ts": 1782666997550
+  },
+  "argentina|jordan": {
+    "h": "Argentina",
+    "a": "Jordan",
+    "hs": 3,
+    "as": 1,
+    "ts": 1782666997550
+  },
+  "algeria|austria": {
+    "h": "Algeria",
+    "a": "Austria",
+    "hs": 3,
+    "as": 3,
+    "ts": 1782666997550
   }
 }
