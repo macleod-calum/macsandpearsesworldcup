@@ -502,5 +502,12 @@
     "hs": 3,
     "as": 3,
     "ts": 1782666997550
+  },
+  "ko:R32:canada|southafrica": {
+    "h": "South Africa",
+    "a": "Canada",
+    "hs": 0,
+    "as": 1,
+    "ts": 1782748673208
   }
 }
